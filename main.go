@@ -18,6 +18,8 @@ func init() {
 }
 
 func main() {
+	log.Printf("go-bmap-indexer version %s (%s) - %s\n", version, commit, date)
+
 	// Check if reset command is provided
 	if len(os.Args) > 1 && os.Args[1] == "reset" {
 		if len(os.Args) != 3 {

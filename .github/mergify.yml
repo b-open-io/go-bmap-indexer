@@ -1,0 +1,24 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - "#approved-reviews-by>=1"
+      - base=master
+      - label!=work-in-progress
+    actions:
+      merge:
+        method: squash
+  - name: Automatic merge PRs with auto-merge label
+    conditions:
+      - label=auto-merge
+    actions:
+      merge:
+        method: squash
+  - name: Automatic merge Dependabot PRs
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+      - check-success=test (1.23.x, ubuntu-latest)
+      - check-success=test (1.23.x, macos-latest)
+      - check-success=Analyze (go)
+    actions:
+      merge:
+        method: squash 

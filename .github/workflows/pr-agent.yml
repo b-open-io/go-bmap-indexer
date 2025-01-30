@@ -16,11 +16,19 @@ jobs:
     steps:
       - name: Validate Secrets
         run: |
-          if [ -z "${{ secrets.OPENAI_KEY }}" ]; then
+          if [ -z "${{ secrets.OPENAI_KEY }}" ] || [ -z "${{ secrets.GITHUB_TOKEN }}" ]; then
             echo "Required secrets are missing!" && exit 1;
           fi
+      - name: Debug Event
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Event action: ${{ github.event.action }}"
+          echo "PR action: ${{ github.event.pull_request.action }}"
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Satchmodamus PR Agent
         uses: rohenaz/pr-agent@v0.0.1
         env:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEBUG: "true" 

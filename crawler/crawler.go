@@ -86,7 +86,7 @@ func Crawl(height int) (newHeight int) {
 		log.Fatalln(err.Error())
 	}
 
-	subscriptionID := config.SubscriptionID
+	subscriptionID := os.Getenv("SUBSCRIPTION_ID")
 
 	// get from block from block.tmp
 	fromBlock := uint64(config.FromBlock)

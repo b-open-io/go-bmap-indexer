@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/GorillaPool/go-junglebus"
+	"github.com/b-open-io/go-junglebus"
 	"github.com/ttacon/chalk"
 )
 

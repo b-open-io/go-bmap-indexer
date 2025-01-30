@@ -97,3 +97,13 @@ func SyncState(fromBlock int) (newBlock int) {
 
 	return
 }
+
+// Add this new function
+func ResetProgress(height uint32) error {
+	conn := database.GetConnection()
+	_, err := conn.UpsertOne("_state", bson.M{"_id": "_state"}, bson.M{"height": height})
+	if err != nil {
+		return fmt.Errorf("failed to reset progress: %v", err)
+	}
+	return nil
+}

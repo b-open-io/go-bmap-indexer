@@ -8,8 +8,8 @@ import (
 	"os"
 	"sync"
 
-	"github.com/rohenaz/go-bmap-indexer/config"
-	"github.com/rohenaz/go-bmap-indexer/database"
+	"github.com/b-open-io/go-bmap-indexer/config"
+	"github.com/b-open-io/go-bmap-indexer/database"
 	"github.com/ttacon/chalk"
 	"go.mongodb.org/mongo-driver/bson"
 )
@@ -141,7 +141,7 @@ func saveToMongo(bsonData *bson.M) (err error) {
 	// 	panic: interface conversion: interface {} is nil, not string
 
 	// goroutine 33 [running]:
-	// github.com/rohenaz/go-bmap-indexer/crawler.saveToMongo(0xc000560088)
+	// github.com/b-open-io/go-bmap-indexer/crawler.saveToMongo(0xc000560088)
 	//         /Users/satchmo/code/go-bmap-indexer/crawler/worker.go:99 +0x165
 
 	var collectionName string

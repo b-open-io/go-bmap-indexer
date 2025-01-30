@@ -5,9 +5,9 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/b-open-io/go-bmap-indexer/crawler"
+	"github.com/b-open-io/go-bmap-indexer/state"
 	"github.com/joho/godotenv"
-	"github.com/rohenaz/go-bmap-indexer/crawler"
-	"github.com/rohenaz/go-bmap-indexer/state"
 )
 
 func init() {

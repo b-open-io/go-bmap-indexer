@@ -8,8 +8,6 @@ dmitri.shuralyov.com/service/change v0.0.0-20181023043359-a85b471d5412/go.mod h1
 dmitri.shuralyov.com/state v0.0.0-20180228185332-28bcc343414c/go.mod h1:0PRwlb0D6DFvNNtx+9ybjezNCa8XF0xaYcETyp6rHWU=
 git.apache.org/thrift.git v0.0.0-20180902110319-2566ecd5d999/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/GorillaPool/go-junglebus v0.2.14 h1:dnGU3LIZ21JiHeeSRW0Yn5xvSHKgiN0T/t3cioABtyg=
-github.com/GorillaPool/go-junglebus v0.2.14/go.mod h1:EMAAnFQbBQB7xLe7DdLTLbescKUudflsXT0CqlSeWgQ=
 github.com/anmitsu/go-shlex v0.0.0-20161002113705-648efa622239/go.mod h1:2FmKhYUyUczH0OGQWaF5ceTx0UBShxjsH6f8oGKYe2c=
 github.com/b-open-io/go-junglebus v0.3.2 h1:uMVi27FxMZOmTox97VGxGaZrM9kON2x5By90MHIMNuo=
 github.com/b-open-io/go-junglebus v0.3.2/go.mod h1:q3fI4C61buifx+4TI4/Dhsnza9fKIWhOX1t69rKkFNY=
@@ -406,8 +404,6 @@ github.com/redis/go-redis/v9 v9.4.0 h1:Yzoz33UZw9I/mFhx4MNrB6Fk+XHO1VukNcCa1+lwy
 github.com/redis/go-redis/v9 v9.4.0/go.mod h1:hdY0cQFCN4fnSYT6TkisLufl/4W5UIXyv0b/CLO2V2M=
 github.com/rogpeppe/go-internal v1.13.1 h1:KvO1DLK/DRN07sQ1LQKScxyZJuNnedQ5/wKSR38lUII=
 github.com/rogpeppe/go-internal v1.13.1/go.mod h1:uMEvuHeurkdAXX61udpOXGD/AzZDWNMNyH2VO9fmH0o=
-github.com/rohenaz/go-bmap-indexer v0.0.0-20250130191159-23a2c352100e h1:NbUNHsj8uqpNR8EBQVeUMmlOVvf5qjb/nqdhRUt93Uo=
-github.com/rohenaz/go-bmap-indexer v0.0.0-20250130191159-23a2c352100e/go.mod h1:y7jRcCvmvdcXU1p7Y7eHoyYEwCdV4+uIOyFL3ypbiUs=
 github.com/russross/blackfriday v1.5.2/go.mod h1:JO/DiYxRf+HjHt06OyowR9PTA263kcR/rfWxYHBV53g=
 github.com/russross/blackfriday/v2 v2.0.1/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/segmentio/asm v1.2.0 h1:9BQrFxC+YOHJlTlHGkTrFWf59nbL3XnCoFLTwDCI7ys=

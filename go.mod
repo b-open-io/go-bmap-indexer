@@ -16,14 +16,12 @@ require (
 	github.com/multiformats/go-multiaddr v0.14.0
 	github.com/multiformats/go-multicodec v0.9.0
 	github.com/multiformats/go-multihash v0.2.3
-	github.com/rohenaz/go-bmap-indexer v0.0.0-20250130191159-23a2c352100e
 	github.com/ttacon/chalk v0.0.0-20160626202418-22c06c80ed31
 	go.mongodb.org/mongo-driver v1.17.2
 	golang.org/x/exp v0.0.0-20250128182459-e0ece0dbea4c
 )
 
 require (
-	github.com/GorillaPool/go-junglebus v0.2.14 // indirect
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bitcoinschema/go-sigma v0.1.1 // indirect

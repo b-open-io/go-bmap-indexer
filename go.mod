@@ -175,4 +175,4 @@ require (
 )
 
 // redirect go-junglebus to commit
-replace github.com/b-open-io/go-junglebus => github.com/b-open-io/go-junglebus v0.3.3-0.20250203205148-52ca39b4dff3
+replace github.com/b-open-io/go-junglebus => github.com/b-open-io/go-junglebus v0.3.3-0.20250203210248-57f180cbe0f4

@@ -5,7 +5,7 @@ var BitcoinSchemaTypes = []string{"friend", "like", "repost", "post", "message"}
 // There are config constants
 const (
 	SkipSPV           = true
-	MinerAPIEndpoint  = "https://mapi.gorillapool.iom/mapi/tx/"
+	MinerAPIEndpoint  = "https://texas1.gorillapool.iom/mapi/tx/"
 	JunglebusEndpoint = "https://junglebus.gorillapool.io/"
 	FromBlock         = 817000                            // "Welcome to the Future" post = 574287
 	BockSyncRetries   = 5                                 // number of retries before block is marked failed

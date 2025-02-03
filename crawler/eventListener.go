@@ -26,7 +26,7 @@ func eventListener(subscription *junglebus.Subscription) {
 		case "status":
 			switch event.Status {
 			case "disconnected":
-				log.Fatalf("%sDisconnected from Junglebus.%s\n", chalk.Green, chalk.Reset)
+				log.Printf("%sDisconnected from Junglebus.%s\n", chalk.Green, chalk.Reset)
 			case "connected":
 				log.Printf("%sConnected to Junglebus%s\n", chalk.Green, chalk.Reset)
 

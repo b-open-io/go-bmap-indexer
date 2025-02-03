@@ -48,6 +48,9 @@ func eventListener(subscription *junglebus.Subscription) {
 				}
 				txCount = 0
 				continue
+			default:
+				log.Printf("%sUnknown status: %s%s\n", chalk.Green, event.Status, chalk.Reset)
+				continue
 			}
 		case "mempool":
 			_, _, err := processMempoolEvent(event.Transaction)
@@ -57,7 +60,9 @@ func eventListener(subscription *junglebus.Subscription) {
 			}
 		case "error":
 			log.Printf("%sERROR: %s%s\n", chalk.Green, event.Error.Error(), chalk.Reset)
+
 		}
+
 	}
 }
 

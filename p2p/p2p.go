@@ -13,6 +13,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/b-open-io/go-bmap-indexer/cache"
+	"github.com/b-open-io/go-bmap-indexer/config"
 	ec "github.com/bitcoin-sv/go-sdk/primitives/ec"
 	"github.com/fxamacker/cbor"
 	"github.com/ipfs/go-cid"
@@ -30,8 +32,6 @@ import (
 	ma "github.com/multiformats/go-multiaddr"
 	mc "github.com/multiformats/go-multicodec"
 	mh "github.com/multiformats/go-multihash"
-	"github.com/rohenaz/go-bmap-indexer/cache"
-	"github.com/rohenaz/go-bmap-indexer/config"
 	"github.com/ttacon/chalk"
 	"go.mongodb.org/mongo-driver/bson"
 )

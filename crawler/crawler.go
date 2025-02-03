@@ -11,15 +11,15 @@ import (
 
 	"fmt"
 
-	"github.com/GorillaPool/go-junglebus"
-	"github.com/GorillaPool/go-junglebus/models"
+	"github.com/b-open-io/go-bmap-indexer/config"
+	"github.com/b-open-io/go-bmap-indexer/database"
+	"github.com/b-open-io/go-bmap-indexer/p2p"
+	"github.com/b-open-io/go-bmap-indexer/persist"
+	"github.com/b-open-io/go-bmap-indexer/state"
+	"github.com/b-open-io/go-junglebus"
+	"github.com/b-open-io/go-junglebus/models"
 	"github.com/bitcoin-sv/go-sdk/transaction"
 	"github.com/bitcoinschema/go-bmap"
-	"github.com/rohenaz/go-bmap-indexer/config"
-	"github.com/rohenaz/go-bmap-indexer/database"
-	"github.com/rohenaz/go-bmap-indexer/p2p"
-	"github.com/rohenaz/go-bmap-indexer/persist"
-	"github.com/rohenaz/go-bmap-indexer/state"
 	"github.com/ttacon/chalk"
 	"go.mongodb.org/mongo-driver/bson"
 	"golang.org/x/exp/slices"
@@ -86,7 +86,7 @@ func Crawl(height int) (newHeight int) {
 		log.Fatalln(err.Error())
 	}
 
-	subscriptionID := config.SubscriptionID
+	subscriptionID := os.Getenv("SUBSCRIPTION_ID")
 
 	// get from block from block.tmp
 	fromBlock := uint64(config.FromBlock)

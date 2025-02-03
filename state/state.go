@@ -5,8 +5,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/rohenaz/go-bmap-indexer/config"
-	"github.com/rohenaz/go-bmap-indexer/database"
+	"github.com/b-open-io/go-bmap-indexer/config"
+	"github.com/b-open-io/go-bmap-indexer/database"
 	"go.mongodb.org/mongo-driver/bson"
 )
 
@@ -96,4 +96,14 @@ func SyncState(fromBlock int) (newBlock int) {
 	SaveProgress(uint32(newBlock))
 
 	return
+}
+
+// ResetProgress resets the indexer state to a specific height
+func ResetProgress(height uint32) error {
+	conn := database.GetConnection()
+	_, err := conn.UpsertOne("_state", bson.M{"_id": "_state"}, bson.M{"height": height})
+	if err != nil {
+		return fmt.Errorf("failed to reset progress: %v", err)
+	}
+	return nil
 }

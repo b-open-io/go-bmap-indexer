@@ -5,7 +5,7 @@ go 1.23.1
 toolchain go1.23.2
 
 require (
-	github.com/b-open-io/go-junglebus v0.3.2
+	github.com/b-open-io/go-junglebus v0.3.3-0.20250203205148-52ca39b4dff3
 	github.com/bitcoin-sv/go-sdk v1.1.18
 	github.com/bitcoinschema/go-bmap v0.2.2
 	github.com/ipfs/go-cid v0.5.0
@@ -173,3 +173,6 @@ require (
 	github.com/youmark/pkcs8 v0.0.0-20240726163527-a2c0da244d78 // indirect
 	google.golang.org/protobuf v1.36.4 // indirect
 )
+
+// redirect go-junglebus to commit
+replace github.com/b-open-io/go-junglebus => github.com/b-open-io/go-junglebus v0.3.3-0.20250203205148-52ca39b4dff3

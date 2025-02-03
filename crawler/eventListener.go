@@ -48,6 +48,9 @@ func eventListener(subscription *junglebus.Subscription) {
 				}
 				txCount = 0
 				continue
+			case "reconnecting":
+				log.Printf("%sReconnecting to Junglebus%s\n", chalk.Green, chalk.Reset)
+				continue
 			default:
 				log.Printf("%sUnknown status: %s%s\n", chalk.Green, event.Status, chalk.Reset)
 				continue

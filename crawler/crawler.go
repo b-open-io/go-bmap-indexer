@@ -347,10 +347,9 @@ func PrepareForIngestion(bmapData *database.IndexerTx) (bsonData bson.M, err err
 				}
 			}
 			if removeData {
-				b.Data.Bytes = nil
-				b.Data.UTF8 = ""
-			} else if b.Data.UTF8 != "" {
-				b.Data.Bytes = nil
+				b.Data = nil
+			} else if len(b.Data) > 0 {
+				b.Data = nil
 			}
 			if len(b.MediaType) > 255 {
 				b.MediaType = b.MediaType[:255]

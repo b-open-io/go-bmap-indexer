@@ -54,7 +54,14 @@ func LoadProgress() (height uint32) {
 	}
 
 	// use the []primitive.M to get the height value
-	height = uint32(doc[0]["height"].(int64))
+	if val, ok := doc[0]["height"].(int32); ok {
+		height = uint32(val)
+	} else if val, ok := doc[0]["height"].(int64); ok {
+		height = uint32(val)
+	} else {
+		log.Printf("[ERROR]: Height is not an int32 or int64")
+		return
+	}
 
 	return
 }

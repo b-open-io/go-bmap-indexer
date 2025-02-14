@@ -7,7 +7,7 @@ toolchain go1.23.2
 require (
 	github.com/b-open-io/go-junglebus v0.3.2
 	github.com/bitcoin-sv/go-sdk v1.1.18
-	github.com/bitcoinschema/go-bmap v0.2.2
+	github.com/bitcoinschema/go-bmap v0.2.3
 	github.com/ipfs/go-cid v0.5.0
 	github.com/joho/godotenv v1.5.1
 	github.com/libp2p/go-libp2p v0.38.2
@@ -144,8 +144,8 @@ require (
 )
 
 require (
-	github.com/bitcoinschema/go-aip v0.3.1 // indirect
-	github.com/bitcoinschema/go-b v0.2.1 // indirect
+	github.com/bitcoinschema/go-aip v0.3.2 // indirect
+	github.com/bitcoinschema/go-b v0.2.2 // indirect
 	github.com/bitcoinschema/go-bap v0.4.1 // indirect
 	github.com/bitcoinschema/go-bob v0.5.1 // indirect
 	github.com/bitcoinschema/go-boost v0.2.1 // indirect

@@ -26,10 +26,11 @@ func eventListener(subscription *junglebus.Subscription) {
 		case "status":
 			switch event.Status {
 			case "disconnected":
-				log.Fatalf("%sDisconnected from Junglebus.%s\n", chalk.Green, chalk.Reset)
+				log.Printf("%sDisconnected from Junglebus.%s\n", chalk.Green, chalk.Reset)
+			case "connecting":
+				log.Printf("%sConnecting to Junglebus%s\n", chalk.Cyan, chalk.Reset)
 			case "connected":
 				log.Printf("%sConnected to Junglebus%s\n", chalk.Green, chalk.Reset)
-
 				continue
 			case "waiting":
 				log.Printf("%sWaiting for new blocks%s\n", chalk.Green, chalk.Reset)
@@ -48,6 +49,12 @@ func eventListener(subscription *junglebus.Subscription) {
 				}
 				txCount = 0
 				continue
+			case "reconnecting":
+				log.Printf("%sReconnecting to Junglebus%s\n", chalk.Green, chalk.Reset)
+				continue
+			default:
+				log.Printf("%sUnknown status: %s%s\n", chalk.Green, event.Status, chalk.Reset)
+				continue
 			}
 		case "mempool":
 			_, _, err := processMempoolEvent(event.Transaction)
@@ -57,7 +64,9 @@ func eventListener(subscription *junglebus.Subscription) {
 			}
 		case "error":
 			log.Printf("%sERROR: %s%s\n", chalk.Green, event.Error.Error(), chalk.Reset)
+
 		}
+
 	}
 }
 

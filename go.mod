@@ -4,8 +4,8 @@ go 1.24.3
 
 require (
 	github.com/b-open-io/go-junglebus v0.3.4
-	github.com/bitcoinschema/go-bmap v0.2.4
-	github.com/bsv-blockchain/go-sdk v1.2.5
+	github.com/bitcoinschema/go-bmap v0.2.5
+	github.com/bsv-blockchain/go-sdk v1.2.18
 	github.com/ipfs/go-cid v0.5.0
 	github.com/joho/godotenv v1.5.1
 	github.com/libp2p/go-libp2p v0.39.1
@@ -120,7 +120,7 @@ require (
 	github.com/quic-go/webtransport-go v0.8.1-0.20241018022711-4ac2c9250e66 // indirect
 	github.com/raulk/go-watchdog v1.3.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	github.com/stretchr/testify v1.10.0 // indirect
+	github.com/stretchr/testify v1.11.1 // indirect
 	github.com/whyrusleeping/go-keyspace v0.0.0-20160322163242-5b898ac5add1 // indirect
 	github.com/wlynxg/anet v0.0.5 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
@@ -134,13 +134,14 @@ require (
 	go.uber.org/mock v0.5.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
-	golang.org/x/crypto v0.40.0 // indirect
-	golang.org/x/mod v0.25.0 // indirect
-	golang.org/x/net v0.42.0 // indirect
-	golang.org/x/sync v0.16.0 // indirect
-	golang.org/x/sys v0.34.0 // indirect
-	golang.org/x/text v0.27.0 // indirect
-	golang.org/x/tools v0.34.0 // indirect
+	golang.org/x/crypto v0.47.0 // indirect
+	golang.org/x/mod v0.31.0 // indirect
+	golang.org/x/net v0.49.0 // indirect
+	golang.org/x/sync v0.19.0 // indirect
+	golang.org/x/sys v0.40.0 // indirect
+	golang.org/x/telemetry v0.0.0-20251203150158-8fff8a5912fc // indirect
+	golang.org/x/text v0.33.0 // indirect
+	golang.org/x/tools v0.40.0 // indirect
 	gonum.org/v1/gonum v0.15.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
@@ -150,10 +151,10 @@ require (
 	github.com/bitcoinschema/go-aip v0.3.3 // indirect
 	github.com/bitcoinschema/go-b v0.2.3 // indirect
 	github.com/bitcoinschema/go-bap v0.4.2 // indirect
-	github.com/bitcoinschema/go-bob v0.5.2 // indirect
+	github.com/bitcoinschema/go-bob v0.5.3 // indirect
 	github.com/bitcoinschema/go-boost v0.2.2 // indirect
-	github.com/bitcoinschema/go-bpu v0.2.2 // indirect
-	github.com/bitcoinschema/go-map v0.2.3-0.20260909031639-11ecdc371b06 // indirect
+	github.com/bitcoinschema/go-bpu v0.2.3 // indirect
+	github.com/bitcoinschema/go-map v0.2.3-0.20260909041123-307d61a2f797 // indirect
 	github.com/centrifugal/centrifuge-go v0.10.4 // indirect
 	github.com/centrifugal/protocol v0.16.0 // indirect
 	github.com/fsnotify/fsnotify v1.8.0

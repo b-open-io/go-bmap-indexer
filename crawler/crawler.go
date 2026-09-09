@@ -18,8 +18,8 @@ import (
 	"github.com/b-open-io/go-bmap-indexer/state"
 	"github.com/b-open-io/go-junglebus"
 	"github.com/b-open-io/go-junglebus/models"
-	"github.com/bsv-blockchain/go-sdk/transaction"
 	"github.com/bitcoinschema/go-bmap"
+	"github.com/bsv-blockchain/go-sdk/transaction"
 	"github.com/ttacon/chalk"
 	"go.mongodb.org/mongo-driver/bson"
 	"golang.org/x/exp/slices"
@@ -214,7 +214,7 @@ func processMempoolEvent(rawtx []byte) (path string, height uint32, err error) {
 	}
 	bmapTx, err := bmap.NewFromTx(t)
 	if err != nil {
-		return "", bmapTx.Blk.I, err
+		return "", 0, err
 	}
 	fmt.Printf("%sProcessing mempool tx %s%s\n", chalk.Cyan, bmapTx.Tx.Tx.H, chalk.Reset)
 
@@ -363,7 +363,7 @@ func PrepareForIngestion(bmapData *database.IndexerTx) (bsonData bson.M, err err
 		bsonData["BOOST"] = bmapData.BOOST
 	}
 
-	if bmapData.MAP == nil {
+	if len(bmapData.MAP) == 0 {
 		log.Println("No MAP data.")
 		return
 	}

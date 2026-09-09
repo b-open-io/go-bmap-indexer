@@ -84,25 +84,31 @@ func ingest(filepath string) {
 }
 
 func saveTransaction(bsonData bson.M) {
-	// 2.1 - get the collection name
-	// panic: interface conversion: interface {} is []interface {}, not primitive.M
-	// TODO: This only works if the metadata is in output idx 0
-	collectionName, ok := bsonData["MAP"].([]interface{})[0].(map[string]interface{})["type"].(string)
-
-	if !ok {
-		log.Printf("%s[Error]: %s%s\n", chalk.Cyan, "Could not get collection name", chalk.Reset)
+	// PrepareForIngestion supplies the collection only for indexable MAP records.
+	// Transactions without MAP are valid inputs and must not crash the worker.
+	collectionName, ok := bsonData["collection"].(string)
+	if !ok || collectionName == "" {
+		return
+	}
+	txid, ok := bsonData["_id"].(string)
+	if !ok || txid == "" {
+		log.Print("Skipping indexed record without a transaction ID")
 		return
 	}
 
 	log.Println("ingesting to collectionName", collectionName)
 	// 2.5 find existing record in the db
-	existing, err := GetExistingDoc(collectionName, bsonData["_id"].(string))
+	existing, err := GetExistingDoc(collectionName, txid)
 	if err != nil {
 		log.Printf("%s[Error]: %s%s\n", chalk.Cyan, err, chalk.Reset)
 	}
 	if (existing == nil || existing.Timestamp == 0) && bsonData["timestamp"] == nil && bsonData["blk"] != nil {
 		// use the block time if theres no timestamp
-		bsonData["timestamp"] = bsonData["blk"].(map[string]interface{})["t"].(float64)
+		if block, ok := bsonData["blk"].(map[string]interface{}); ok {
+			if timestamp, ok := block["t"].(float64); ok {
+				bsonData["timestamp"] = timestamp
+			}
+		}
 	}
 
 	// 3 - insert into mongo

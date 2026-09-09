@@ -15,7 +15,7 @@ import (
 
 	"github.com/b-open-io/go-bmap-indexer/cache"
 	"github.com/b-open-io/go-bmap-indexer/config"
-	ec "github.com/bitcoin-sv/go-sdk/primitives/ec"
+	ec "github.com/bsv-blockchain/go-sdk/primitives/ec"
 	"github.com/fxamacker/cbor"
 	"github.com/ipfs/go-cid"
 	"github.com/joho/godotenv"

@@ -18,7 +18,7 @@ import (
 	"github.com/b-open-io/go-bmap-indexer/state"
 	"github.com/b-open-io/go-junglebus"
 	"github.com/b-open-io/go-junglebus/models"
-	"github.com/bitcoin-sv/go-sdk/transaction"
+	"github.com/bsv-blockchain/go-sdk/transaction"
 	"github.com/bitcoinschema/go-bmap"
 	"github.com/ttacon/chalk"
 	"go.mongodb.org/mongo-driver/bson"
